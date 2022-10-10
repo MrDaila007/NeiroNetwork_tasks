@@ -5,7 +5,7 @@ import mymodule
 print("Задание 1)")
 
 print("\na) Запись в текстовый файл:")
-students = open('resources/students1ab.txt', 'w')
+students = open('group_6a.txt', 'w')
 title = 'Елисеев\nКалинин\nКарпенко\n' \
         'Кондибор\nКоновалов\nКохнюк\n' \
         'Перепеча\nПоличенков\nПупко\n' \
@@ -13,20 +13,20 @@ title = 'Елисеев\nКалинин\nКарпенко\n' \
 students.write(title)
 students.close()
 
-students = open('resources/students1ab.txt')
+students = open('group_6a.txt')
 print(students.read())
 students.close()
 
 print("b) Чтение из текстового файла:")
-students = open('resources/students1ab.txt')
+students = open('group_6a.txt')
 i = 1
 for line in students:
-    print(str(i) + ') ' + line.strip())
+    print(str(i) + '. ' + line.strip())
     i += 1
 students.close()
 
 print("\nc) Добавить к каждой фамилии имя:")
-students = open('resources/students1cd.txt', 'w')
+students = open('students1cd.txt', 'w')
 title = 'Елисеев Данила\nКалинин Валентин\nКарпенко Ксения\n' \
         'Кондибор Никита\nКоновалов Андрей\nКохнюк Анастасия\n' \
         'Перепеча Данила\nПоличенков Максим\nПупко Ксения\n' \
@@ -34,13 +34,13 @@ title = 'Елисеев Данила\nКалинин Валентин\nКарп�
 students.write(title)
 students.close()
 
-students = open('resources/students1cd.txt')
+students = open('students1cd.txt')
 for line in students:
     print(line.strip())
 students.close()
 
 print("\nd) Чтение из текстового файла:")
-students = open('resources/students1cd.txt')
+students = open('students1cd.txt')
 for line in students:
     print('{} {:.1}'.format(*line.strip().split()))
 students.close()
@@ -60,5 +60,6 @@ print(*dir(), sep='\n')
 
 print("\nd) Свой модуль:")
 mymodule.hello()
-mymodule.fibon(10)
+mymodule.fibon(5)
 mymodule.discr(1, 10, -39)
+print(mymodule.sqrt(4))
